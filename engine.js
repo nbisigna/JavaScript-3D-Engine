@@ -391,7 +391,7 @@ function Engine3d() {
         break;
     }
   };
-  this.OnUserUpdate = function (fElapsedTime) {
+  this.OnUserUpdate = function (fElapsedTime = 1) {
     window.time = fElapsedTime;
     window.removeEventListener('keydown', this.keydown);
     window.addEventListener('keydown', this.keydown);
@@ -509,6 +509,14 @@ function Engine3d() {
             triProjected.p[2],
             triProjected.p[2].w
           );
+
+          // X/Y are inverted so put them back
+          triProjected.p[0].x *= -1.0;
+          triProjected.p[1].x *= -1.0;
+          triProjected.p[2].x *= -1.0;
+          triProjected.p[0].y *= -1.0;
+          triProjected.p[1].y *= -1.0;
+          triProjected.p[2].y *= -1.0;
 
           var vOffsetView = new vec3d(1, 1, 0);
           triProjected.p[0] = this.Vector_Add(triProjected.p[0], vOffsetView);
