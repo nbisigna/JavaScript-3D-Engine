@@ -1,6 +1,6 @@
 const fs = require('fs');
 const readline = require('readline');
-var filename = 'spaceship';
+var filename = 'mountains';
 function triangle(a, b, c, d, e, f, g, h, i) {
   this.p = [new vec3d(a, b, c), new vec3d(d, e, f), new vec3d(g, h, i)];
 }
