@@ -355,7 +355,10 @@ function Engine3d() {
   };
 
   this.OnUserCreate = function () {
-    meshCube.tris = axis;
+    // Change item to render
+    // meshCube.tris = cube;
+    meshCube.tris = spaceship;
+    // meshCube.tris = mountains;
 
     matProj = this.Matrix_MakeProjection(90, Height / Width, 0.1, 1000);
   };
